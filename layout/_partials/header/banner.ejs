@@ -5,9 +5,16 @@ var banner_mask_alpha = parseFloat(page.banner_mask_alpha || theme.index.banner_
 var subtitle = page.subtitle || page.title
 %>
 
+<script src="/js/particles.js"></script>
 <div id="banner" class="banner" <%- theme.banner && theme.banner.parallax && 'parallax=true' %>
-     style="background: url('<%- url_for(banner_img) %>') no-repeat center center; background-size: cover;">
+     style="no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
+    <div id="particles-js"></div>
+    <div id='banner-canvas'>
+         <div class="wrapper">
+            <div class="flower"></div>
+        </div>
+    </div>
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, <%= parseFloat(banner_mask_alpha) %>)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
@@ -31,3 +38,4 @@ var subtitle = page.subtitle || page.title
     </div>
   </div>
 </div>
+<script src='/js/banner.js'></script>
